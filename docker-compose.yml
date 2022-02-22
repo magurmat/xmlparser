@@ -1,0 +1,15 @@
+version: '3'
+services:
+  postgres:
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=xmlparser
+    volumes:
+      - parser_db:/var/lib/postgresql/data
+volumes:
+  parser_db:
+    external: true
